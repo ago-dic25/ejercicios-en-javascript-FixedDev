@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arreglos intro</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Search and Registration</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
-    
+
+  <h2>Student Management</h2>
+  
+  <div>
+    <label for="searchInput">Student Name:</label>
+    <input type="text" id="searchInput" placeholder="Search by name or surname...">
+    <button id="clearFilterButton">Clear Filter</button>
+  </div>
+  
+  <div style="margin-top: 10px;">
+    <button id="sortByNameButton">Sort by First Name</button>
+    <button id="sortBySurnameButton">Sort by Surname</button>
+  </div>
+
+  <table class="students-table" id="studentsTable">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Second Surname</th>
+        <th>Major</th>
+      </tr>
+    </thead>
+    <tbody>
+      </tbody>
+  </table>
+
+  <div class="new-student-form">
+    <h3>Add New Student</h3>
+    <input type="text" id="newFirstName" placeholder="First Name">
+    <input type="text" id="newSurname" placeholder="Surname">
+    <input type="text" id="newSecondSurname" placeholder="Second Surname">
+    <select id = "newMajor">
+      <option>Choose...</option>
+      <option value = "LCC">LCC</option>
+      <option value = "LMAD">LMAD</option>
+      <option value = "LSTI">LSTI</option>
+      <option value = "LA">LA</option>
+      <option value = "LF">LF</option>
+      <option value = "LM">LM</option>
+    </select>
+    <button id="addStudentButton">Add Student</button>
+  </div>
+
 </body>
 </html>

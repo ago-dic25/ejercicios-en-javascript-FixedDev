@@ -30,12 +30,38 @@
   }
 
   h1 {
-    text-shadow: 10px 10px 0 rgba(0,0,0,1);
     font-size: 100px;
   }
   </style>
 
 <script>
+  const hero = document.querySelector('.hero');
+  const h1 = hero.querySelector('h1');
+  
+  const walk = 50; 
+
+  function shadow(e) {
+    const { offsetWidth: width, offsetHeight: height } = hero;
+    
+    let { offsetX: x, offsetY: y } = e;
+
+    if (this !== e.target) {
+      x = x + e.target.offsetLeft;
+      y = y + e.target.offsetTop;
+    }
+
+    const xWalk = Math.round((x / width * walk) - (walk / 2));
+    const yWalk = Math.round((y / height * walk) - (walk / 2));
+
+	h1.style.transform = `translateX(${xWalk * 0.09}px) translateY(${yWalk * 0.09}px)`;
+
+    h1.style.textShadow = `
+      ${xWalk*-1}px ${yWalk*-1}px 2px rgb(139 137 137)
+    `;
+
+  }
+
+  hero.addEventListener('mousemove', shadow);
 </script>
 </body>
 </html>
